@@ -6,4 +6,4 @@ install game: `./install.sh`
 copy vkbasalt: `mkdir ~/.config/vkBasalt && cp /usr/share/vkBasalt/vkBasalt.conf.example ~/.config/vkBasalt/vkBasalt.conf`  
 run eve online: `./run.sh`
 
-more info: https://t1p.de/evewine
+more info: https://t1p.de/evewine (Play EVE Online on Arch Linux with WineHQ)
