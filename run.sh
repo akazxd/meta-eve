@@ -14,8 +14,11 @@ export FREETYPE_PROPERTIES="truetype:interpreter-version=35"
 # export DISPLAY=
 export STAGING_SHARED_MEMORY=1 WINEFSYNC_FUTEX2=1 WINEFSYNC=1 WINEDEBUG="-all"
 # $HOME/EVE/wine/bin/
-wine explorer "%USERPROFILE%\AppData\Local\eve-online"
 
-#"%USERPROFILE%\AppData\Local\eve-online\eve-online.exe" "%u"
+if [ "$#" -eq 0 ]; then
+    wine explorer "%USERPROFILE%\AppData\Local\eve-online"
+else
+    wine start "%USERPROFILE%\AppData\Local\eve-online\eve-online.exe" "$@"
+fi
 
 # ps aux | grep eve-online | awk '{print $2}' | xargs -I{} kill -9 {}
