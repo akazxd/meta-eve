@@ -1,8 +1,9 @@
 #!/bin/bash
 
 export WINEARCH=win64
-export WINEPREFIX=$HOME/EVE/eve-online
-
+if [ -z "${WINEPREFIX}" ]; then
+    export WINEPREFIX=$HOME/EVE/eve-online
+fi
 echo 'Running Wine Config'
 winecfg /v win11
 
