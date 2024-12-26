@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export PATH="$HOME/makepkg/meta-eve/wine-10/bin:$PATH"
 which wine
 
 if [ -z "${WINEPREFIX}" ]; then
@@ -16,6 +17,8 @@ export RADV_PERFTEST='aco,cswave32,dccmsaa,gewave32,pswave32,rtwave64,sam' RADV_
 export VKD3D_CONFIG=force_host_cached VKD3D_DEBUG=none
 export DXVK_HUD="fps,compiler" DXVK_LOG_LEVEL=none
 export LD_BIND_NOW=1 ENABLE_VKBASALT=1 VKBASALT_LOG_LEVEL=error MANGOHUD=1
+
+# sudo scx_lavd
 
 if [ "$#" -eq 0 ]; then
     wineserver -k 15; sleep 3;
