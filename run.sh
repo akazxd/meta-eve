@@ -14,7 +14,7 @@ export FREETYPE_PROPERTIES="truetype:interpreter-version=35"
 export VK_DRIVER_FILES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
 export RADV_PERFTEST='aco,cswave32,dccmsaa,gewave32,pswave32,rtwave64,sam' RADV_TEX_ANISO=4
 
-export VKD3D_CONFIG=force_host_cached VKD3D_DEBUG=none
+export VKD3D_CONFIG=force_host_cached VKD3D_DEBUG=none VKD3D_FRAME_RATE=60 VK_MESA_image_alignment_control=1 VKD3D_SWAPCHAIN_LATENCY_FRAMES=2 RADV_DEBUG=novrsflatshading VKD3D_CONFIG=no_upload_hvv VKD3D_CONFIG=no_staggered_submit
 export DXVK_HUD="fps,compiler" DXVK_LOG_LEVEL=none
 export LD_BIND_NOW=1 ENABLE_VKBASALT=1 VKBASALT_LOG_LEVEL=error MANGOHUD=1
 
