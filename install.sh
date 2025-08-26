@@ -1,12 +1,15 @@
 #!/bin/bash
 
-export PATH="/home/aazad/makepkg/meta-eve/wine-10/bin:$PATH"
 which wine
 
-export WINEARCH=win64
 if [ -z "${WINEPREFIX}" ]; then
-    export WINEPREFIX=$HOME/EVE/eve-online
+    export WINEPREFIX=$HOME/.wine
 fi
+
+set -a
+source env.conf
+set +a
+
 echo 'Running Wine Config'
 winecfg /v win11
 
@@ -18,8 +21,10 @@ ln -s /tmp/ $WINEPREFIX/drive_c/windows/temp
 echo 'Check Staging > Enable VAAPI as backend for DXVA2 GPU Decoding'
 winecfg
 
+echo 'Updating winetricks'
+sudo winetricks --self-update
+
 echo 'Installing dependencies'
-winetricks --self-update
 winetricks -q vcrun2022 #dxvk vkd3d
 setup_dxvk install
 setup_vkd3d_proton install
